@@ -1,7 +1,7 @@
 function getArrayParams(...arr) {
 
-  let min = Math.min.apply(null, arr);
-  let max = Math.max.apply(null, arr);
+  let min = Math.min(...arr);
+  let max = Math.max(...arr);
   let avg = arr.reduce((total, currentItem) => {
     total += currentItem / arr.length;
     return Number(total.toFixed(2));
@@ -27,8 +27,8 @@ function differenceMaxMinWorker(...arr) {
   if (arr.length === 0) {
     return 0;
   } else {
-    let min = Math.min.apply(null, arr);
-    let max = Math.max.apply(null, arr);
+    let min = Math.min(...arr);
+    let max = Math.max(...arr);
     return max - min;
   }
 }
